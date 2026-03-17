@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Deepra Coaching Centre | Best Coaching in Vaishali Nagar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#FF4B6A',    
+                            blue: '#3B82F6',   
+                            yellow: '#FFC107', 
+                            light: '#F8FAFC',  
+                            dark: '#1E293B',   
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Strict overflow prevention for mobile bug fix */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        /* Custom Animations */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(15px, -25px) scale(1.05); }
+            100% { transform: translate(-10px, 10px) scale(0.95); }
+        }
+
+        /* Smooth Floating for Inner Cards */
+        @keyframes float-smooth {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float-smooth {
+            animation: float-smooth 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float-smooth 5s ease-in-out infinite 2s;
+        }
+
+        .blob-1 { top: -5%; left: -5%; width: 300px; height: 300px; background: rgba(59, 130, 246, 0.3); }
+        .blob-2 { bottom: -5%; right: -5%; width: 350px; height: 350px; background: rgba(255, 75, 106, 0.2); animation-delay: -5s; }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Pattern Background */
+        .bg-pattern {
+            background-image: radial-gradient(#FFC107 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.05;
+        }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #FFC107, #FF4B6A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- Background Decoration -->
+    <div class="blob blob-1 rounded-full"></div>
+    <div class="blob blob-2 rounded-full hidden md:block"></div>
+    <div class="absolute inset-0 bg-pattern pointer-events-none z-[-1]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo using Image -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <img src="https://i.ibb.co/9m6dxr3d/Whats-App-httpsapi-whatsapp-comsendphone91882392-XXXX-HD.jpg" alt="Deepra Coaching Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm border border-gray-200">
+                    <span class="font-bold text-sm sm:text-base md:text-lg tracking-tight text-brand-dark">Deepra <span class="text-brand-yellow">Coaching</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-brand-yellow font-medium text-xs sm:text-sm transition-colors">Home</a>
+                    <a href="#features" class="text-gray-600 hover:text-brand-yellow font-medium text-xs sm:text-sm transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-brand-yellow font-medium text-xs sm:text-sm transition-colors">Reviews</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 to-brand-yellow text-brand-dark font-bold text-xs sm:text-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                        Enroll Now
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-dark focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl pb-4">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-brand-yellow hover:bg-yellow-50 transition-colors">Home</a>
+                <a href="#features" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-brand-yellow hover:bg-yellow-50 transition-colors">Features</a>
+                <a href="#testimonials" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-brand-yellow hover:bg-yellow-50 transition-colors">Reviews</a>
+                <a href="#contact" class="block mt-3 text-center w-full px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-brand-yellow text-brand-dark text-sm font-bold hover:shadow-lg transition-all">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-8 overflow-hidden">
+        <!-- Left Content -->
+        <div class="w-full lg:w-5/12 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 text-amber-600 font-semibold text-[10px] sm:text-xs mb-4 reveal-up border border-amber-100 shadow-sm">
+                <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-amber-500"></span>
+                </span>
+                Admission Open 2026-27
+            </div>
+            
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-extrabold leading-tight mb-4 reveal-up delay-100">
+                Best Coaching in <br class="hidden sm:block">
+                <span class="text-gradient">Vaishali Nagar</span>
+            </h1>
+            
+            <p class="text-gray-600 text-xs sm:text-sm md:text-base mb-6 max-w-xl reveal-up delay-200 leading-relaxed">
+                Join <span class="font-bold text-brand-dark">Deepra Coaching Centre</span> for Class 1st to 12th. Experience interactive, result-oriented learning with Suraj Sir. All subjects covered with personalized attention.
+            </p>
+            
+            <!-- Highly Responsive Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto reveal-up delay-300">
+                <a href="#contact" class="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-dark text-white font-bold text-xs sm:text-sm hover:bg-gray-800 hover:shadow-glow transition-all duration-300 flex justify-center items-center gap-2">
+                    Start 1 Month Free Trial <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+                <a href="#features" class="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-brand-dark border border-gray-200 font-bold text-xs sm:text-sm hover:border-brand-yellow hover:text-brand-dark hover:shadow-sm transition-all duration-300 flex justify-center items-center">
+                    Explore Features
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Visual with Image (Safe Floating Badges) -->
+        <div class="w-full lg:w-7/12 relative reveal-zoom mt-6 lg:mt-0 flex justify-center lg:justify-end">
+            <!-- Increased size limits -->
+            <div class="relative w-full max-w-[22rem] sm:max-w-[26rem] md:max-w-[30rem] lg:max-w-[32rem] aspect-[4/4]">
+                
+                <!-- Decorative rings -->
+                <div class="absolute inset-0 rounded-full border-[1px] border-dashed border-brand-yellow/50 animate-[spin_20s_linear_infinite]"></div>
+                <div class="absolute inset-4 rounded-full border-[1px] border-dashed border-gray-300 animate-[spin_15s_linear_infinite_reverse]"></div>
+                
+                <!-- Main Image Container -->
+                <div class="absolute inset-5 sm:inset-6 md:inset-8 rounded-[2rem] sm:rounded-[2.5rem] bg-gray-100 overflow-hidden shadow-2xl flex items-center justify-center border-4 border-white group">
+                    <!-- Updated with provided image URL -->
+                    <img src="https://i.ibb.co/v4JV7NNF/1773725349219.png" alt="Suraj Sir" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                    
+                    <!-- Inner Gradient for text readability -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/30 to-transparent"></div>
+                    
+                    <!-- Name Plate inside image -->
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-center z-10">
+                        <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-white tracking-wide drop-shadow-lg">Suraj Sir</h3>
+                        <p class="text-brand-yellow font-bold mt-0.5 text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest drop-shadow-md">Masterpiece Teacher of Maths & Science</p>
+                    </div>
+                </div>
+
+                <!-- Floating Badges (Positioned Safely) -->
+                
+                <!-- Free Trial Badge (Top Right Inside) -->
+                <div class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/85 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-3 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 animate-float-smooth border border-white/60 z-20">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-yellow to-amber-500 text-brand-dark flex items-center justify-center text-xs sm:text-sm shadow-inner font-bold">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div>
+                        <p class="text-[8px] sm:text-[9px] text-gray-600 font-bold uppercase tracking-wider mb-0.5">Special Offer</p>
+                        <p class="text-[10px] sm:text-xs font-extrabold text-brand-dark leading-none">1 Month Free Class</p>
+                    </div>
+                </div>
+
+                <!-- Classes Badge (Moved significantly down) -->
+                <div class="absolute -bottom-2 left-2 sm:-bottom-6 sm:left-6 bg-white/90 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-3 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 animate-float-delayed border border-white/60 z-20">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-gray-800 to-black text-white flex items-center justify-center text-xs sm:text-sm shadow-inner">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <p class="text-[8px] sm:text-[9px] text-gray-600 font-bold uppercase tracking-wider mb-0.5">Admissions Open</p>
+                        <p class="text-[10px] sm:text-xs font-extrabold text-brand-dark leading-none">Class 1st to 12th</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="py-12 sm:py-16 bg-white relative border-t border-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" id="counter-grid">
+                
+                <!-- Stat 1 -->
+                <div class="bg-gradient-to-br from-amber-50 to-white border border-amber-100 p-5 rounded-2xl shadow-soft text-center reveal-up hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 mx-auto bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl font-black text-brand-dark mb-1 counter" data-target="12">0</h3>
+                    <div class="h-1 w-8 bg-brand-yellow mx-auto rounded mb-2"></div>
+                    <p class="text-xs sm:text-sm font-bold text-gray-700">Classes</p>
+                    <p class="text-[9px] sm:text-[10px] text-gray-500 font-medium bg-white inline-block px-2 py-0.5 rounded-full mt-1.5 border border-gray-100">1st to 12th Standard</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 p-5 rounded-2xl shadow-soft text-center reveal-up delay-100 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 mx-auto bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl font-black text-brand-dark mb-1 counter" data-target="7">0</h3>
+                    <div class="h-1 w-8 bg-brand-blue mx-auto rounded mb-2"></div>
+                    <p class="text-xs sm:text-sm font-bold text-gray-700">Days A Week</p>
+                    <p class="text-[9px] sm:text-[10px] text-gray-500 font-medium bg-white inline-block px-2 py-0.5 rounded-full mt-1.5 border border-gray-100">Consistent Learning</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="bg-gradient-to-br from-rose-50 to-white border border-rose-100 p-5 rounded-2xl shadow-soft text-center reveal-up delay-200 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 mx-auto bg-rose-100 text-brand-red rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl font-black text-brand-dark mb-1 counter" data-target="100">0</h3>
+                    <div class="h-1 w-8 bg-brand-red mx-auto rounded mb-2"></div>
+                    <p class="text-xs sm:text-sm font-bold text-gray-700">Subjects</p>
+                    <p class="text-[9px] sm:text-[10px] text-gray-500 font-medium bg-white inline-block px-2 py-0.5 rounded-full mt-1.5 border border-gray-100">% Coverage</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 p-5 rounded-2xl shadow-soft text-center reveal-up delay-300 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-yellow text-brand-dark text-[8px] sm:text-[9px] font-bold px-2 py-0.5 rounded-bl-md z-10">Justdial</div>
+                    <div class="w-10 h-10 mx-auto bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-lg mb-3 relative z-10">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl font-black text-brand-dark mb-1 counter relative z-10" data-target="5">0</h3>
+                    <div class="h-1 w-8 bg-emerald-500 mx-auto rounded mb-2 relative z-10"></div>
+                    <p class="text-xs sm:text-sm font-bold text-gray-700 relative z-10">Star Rating</p>
+                    <p class="text-[9px] sm:text-[10px] text-gray-500 font-medium bg-white inline-block px-2 py-0.5 rounded-full mt-1.5 border border-gray-100 relative z-10">Top Rated</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 sm:py-16 relative bg-gray-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 reveal-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-3">Our Premium <span class="text-brand-yellow">Features</span></h2>
+                <p class="text-gray-600 text-xs sm:text-sm max-w-xl mx-auto">Providing a rare quality and standard of education with personalized attention and effective learning strategies.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+                
+                <div class="w-full lg:w-1/2 reveal-left">
+                    <div class="space-y-5 sm:space-y-6">
+                        <!-- Feature 1 -->
+                        <div class="flex items-start gap-3 sm:gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-lg mt-0.5">
+                                <i class="fas fa-chalkboard"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm sm:text-base font-bold text-brand-dark mb-1">Smart Class Rooms</h4>
+                                <p class="text-gray-600 text-[11px] sm:text-xs leading-relaxed">Modern, technology-enabled classrooms to make learning visual, interactive, and fun for all kids.</p>
+                            </div>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="flex items-start gap-3 sm:gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-100 text-brand-blue rounded-lg flex items-center justify-center text-lg mt-0.5">
+                                <i class="fas fa-laptop-house"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm sm:text-base font-bold text-brand-dark mb-1">Online & Offline with Recording</h4>
+                                <p class="text-gray-600 text-[11px] sm:text-xs leading-relaxed">Flexible learning options. Never miss a concept with recorded sessions of all our interactive classes.</p>
+                            </div>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="flex items-start gap-3 sm:gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-rose-100 text-brand-red rounded-lg flex items-center justify-center text-lg mt-0.5">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm sm:text-base font-bold text-brand-dark mb-1">Lab Activities & Creative Notes</h4>
+                                <p class="text-gray-600 text-[11px] sm:text-xs leading-relaxed">Practical lab activities to clear science concepts, accompanied by easy-to-revise creative short notes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 reveal-right">
+                    <!-- Big graphic container -->
+                    <div class="bg-brand-dark p-6 sm:p-8 rounded-[2.5rem] shadow-xl border border-gray-800 relative overflow-hidden text-white">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow rounded-bl-full opacity-10 -z-0"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-brand-blue rounded-tr-full opacity-10 -z-0"></div>
+                        
+                        <div class="relative z-10 text-center py-6">
+                            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-yellow mb-2">1 Month Free</h3>
+                            <p class="text-base sm:text-lg font-bold text-gray-300 uppercase tracking-widest mb-6">Trial Classes</p>
+                            <p class="text-[11px] sm:text-xs text-gray-400 mb-8 max-w-sm mx-auto">Experience our teaching style, personalized attention, and interactive methods completely free for one month before making a decision.</p>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 w-full justify-center">
+                                <span class="bg-white/10 text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 shadow-sm flex items-center justify-center"><i class="fas fa-check-circle text-brand-yellow mr-2"></i> All Subjects</span>
+                                <span class="bg-white/10 text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 shadow-sm flex items-center justify-center"><i class="fas fa-calendar-alt text-brand-yellow mr-2"></i> 7 Days a Week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials (Extracted from Images) -->
+    <section id="testimonials" class="py-12 sm:py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 reveal-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-3">What Parents & Students <span class="text-brand-yellow">Say</span></h2>
+                <p class="text-gray-600 text-xs sm:text-sm max-w-xl mx-auto">Don't just take our word for it. Read the reviews from our trusted community.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
+                
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100 reveal-up shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-brand-yellow text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-[11px] sm:text-xs leading-relaxed italic mb-4">"Deepra coaching and classes is definitely best institute in vaishali nagar...... You can trust this institute blindly for your kids future..... thanks to the owner suraj shaw ...who gives us way time to time for our kids and also motivate our kids for their future....."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">B</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Bhargavi Sharma</p>
+                            <p class="text-[9px] text-gray-500">Parent / 5 reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100 reveal-up delay-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-brand-yellow text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-[11px] sm:text-xs leading-relaxed italic mb-4">"Excellent coaching in Vaishali Nagar most dedicated teacher Suraj Sir marvelous teacher of Maths n Science n masterpiece of all subjects he is one of the best teacher"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-amber-800 rounded-full flex items-center justify-center text-white font-bold text-xs">M</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Mamta Sharma</p>
+                            <p class="text-[9px] text-gray-500">Parent / 1 review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100 reveal-up shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-brand-yellow text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-[11px] sm:text-xs leading-relaxed italic mb-4">"Thank you, Deepra Coaching Classes, for your exceptional guidance and support. Your dedication towards teaching, personalized attention, and effective learning strategies have made a significant impact on my daughter's academic progress."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-pink-800 rounded-full flex items-center justify-center text-white font-bold text-xs">D</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Deepanjali Sharma</p>
+                            <p class="text-[9px] text-gray-500">Parent Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100 reveal-up delay-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-brand-yellow text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-[11px] sm:text-xs leading-relaxed italic mb-4">"Suraj sir aapki teaching style itni clear hai ki topics bhi easily samjh aa jate h. aap sirf concept nahi padhate balki confidence bhi dete h. Students k liye real motivation h. Dil se shukriya sir. - Vineet"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xs">M</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">@mehakthadani5649</p>
+                            <p class="text-[9px] text-gray-500">Student</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contact" class="py-12 sm:py-16 relative overflow-hidden bg-brand-dark">
+        <!-- Slanted background -->
+        <div class="absolute inset-0 bg-black transform -skew-y-2 origin-top-left z-0 scale-110 opacity-30"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 reveal-up">Ready for the Best Education?</h2>
+            <p class="text-gray-300 text-xs sm:text-sm mb-6 sm:mb-8 reveal-up delay-100 max-w-xl mx-auto">Enrollments are open. Contact us today to secure your seat and claim your 1 Month Free Trial Class.</p>
+            
+            <!-- White card with heavy corner radius -->
+            <div class="bg-white p-6 sm:p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl reveal-up delay-200 border-4 border-white/10 backdrop-blur-sm">
+                <!-- Added an address card icon inside the Official Contact Details badge -->
+                <div class="inline-block px-3 py-1.5 bg-amber-100 text-amber-700 font-bold rounded-md mb-4 text-[10px] uppercase tracking-widest">
+                    <i class="fas fa-address-card mr-1"></i> Official Contact Details
+                </div>
+                
+                <div class="flex flex-col gap-2 mb-6 text-center text-gray-600 text-[11px] sm:text-xs font-medium">
+                    <!-- Changed map marker icon to a more modern location-dot -->
+                    <p><i class="fas fa-location-dot text-brand-red mr-1 text-sm"></i> 65, Girnar Colony South, Near ICICI Bank,<br>Gandhi Path, Vaishali Nagar, Jaipur</p>
+                </div>
+                
+                <!-- Redesigned Contact Cards -->
+                <div class="flex flex-col md:flex-row justify-center items-stretch gap-3 sm:gap-4 w-full max-w-2xl mx-auto mb-8">
+                    
+                    <!-- Phone Enquiry Card -->
+                    <a href="tel:+918005612099" class="flex-1 bg-gray-50 hover:bg-white border border-gray-100 hover:border-brand-yellow p-4 rounded-2xl flex items-center gap-3 group transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                        <div class="w-12 h-12 bg-amber-100 group-hover:bg-brand-yellow group-hover:text-brand-dark text-amber-600 rounded-full flex items-center justify-center text-xl transition-colors duration-300 flex-shrink-0">
+                            <!-- Changed phone icon to a volume/headset style -->
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Call Us</p>
+                            <p class="text-sm sm:text-base md:text-lg font-black text-brand-dark group-hover:text-amber-600 transition-colors">+91 8005612099</p>
+                        </div>
+                    </a>
+                    
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/918823922203" target="_blank" class="flex-1 bg-gray-50 hover:bg-white border border-gray-100 hover:border-emerald-500 p-4 rounded-2xl flex items-center gap-3 group transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                        <div class="w-12 h-12 bg-emerald-100 group-hover:bg-emerald-500 group-hover:text-white text-emerald-600 rounded-full flex items-center justify-center text-xl transition-colors duration-300 flex-shrink-0">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">WhatsApp Us</p>
+                            <p class="text-sm sm:text-base md:text-lg font-black text-brand-dark group-hover:text-emerald-600 transition-colors">+91 8823922203</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div>
+                    <!-- Highly rounded (pill-shaped) yellow button -->
+                    <a href="tel:+918823922203" class="inline-block w-full sm:w-auto px-10 py-3.5 bg-gradient-to-r from-amber-400 to-brand-yellow text-brand-dark font-bold text-xs sm:text-sm rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 sm:py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <!-- Brand -->
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <div class="flex items-center gap-2">
+                        <img src="https://i.ibb.co/9m6dxr3d/Whats-App-httpsapi-whatsapp-comsendphone91882392-XXXX-HD.jpg" alt="Deepra Logo" class="w-8 h-8 rounded-full object-cover shadow-sm border border-gray-700">
+                        <span class="font-bold text-base sm:text-lg text-white tracking-tight">Deepra <span class="text-brand-yellow">Coaching</span></span>
+                    </div>
+                    <p class="text-[10px] sm:text-xs text-gray-500 max-w-xs leading-relaxed">
+                        A rare quality and quantity Institute. Acting as a guardian, motivation, and best standard quality education provider in Vaishali Nagar.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <h4 class="text-white font-bold text-sm mb-2">Navigation</h4>
+                    <a href="#home" class="text-[11px] sm:text-xs text-gray-400 hover:text-brand-yellow transition-colors">Home</a>
+                    <a href="#features" class="text-[11px] sm:text-xs text-gray-400 hover:text-brand-yellow transition-colors">Smart Features</a>
+                    <a href="#testimonials" class="text-[11px] sm:text-xs text-gray-400 hover:text-brand-yellow transition-colors">Parent Reviews</a>
+                    <a href="#contact" class="text-[11px] sm:text-xs text-gray-400 hover:text-brand-yellow transition-colors">Contact Us</a>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <h4 class="text-white font-bold text-sm mb-2">Connect With Us</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400 text-center md:text-left"><i class="fas fa-map-marker-alt mr-2 text-brand-yellow"></i>65, Girnar Colony South, Gandhi Path,<br>Vaishali Nagar, Jaipur</p>
+                    <p class="text-[10px] sm:text-xs text-gray-400"><i class="fas fa-globe mr-2 text-brand-yellow"></i>www.deepracoachingclasses.in</p>
+                    <div class="flex space-x-3 mt-3">
+                        <a href="https://www.facebook.com/deepracoachingcentre" target="_blank" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors text-xs">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/deepra_coaching_classes" target="_blank" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors text-xs">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/918823922203" target="_blank" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors text-xs">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 text-center flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-[10px] sm:text-xs text-gray-500 mb-2 sm:mb-0">
+                    &copy; <span id="year"></span> Deepra Coaching Centre. All Rights Reserved.
+                </p>
+                <p class="text-[10px] sm:text-xs text-gray-600">
+                    Empowering students for a brighter future.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu on link click
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Sticky Navbar Styling
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.replace('bg-white/80', 'bg-white/95');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navbar.classList.replace('bg-white/95', 'bg-white/80');
+                }
+            });
+
+            // Intersection Observer for Scroll Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        
+                        // If it's the stats section, trigger counter animation
+                        if(entry.target.id === 'counter-grid') {
+                            startCounters();
+                        }
+                        
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            revealElements.forEach(el => observer.observe(el));
+            
+            const counterGrid = document.getElementById('counter-grid');
+            if(counterGrid) {
+                 observer.observe(counterGrid);
+            }
+
+            // Number Counter Animation Function
+            let countersStarted = false;
+            function startCounters() {
+                if (countersStarted) return;
+                countersStarted = true;
+
+                const counters = document.querySelectorAll('.counter');
+                const speed = 200; 
+
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    
+                    const inc = target / speed;
+                    
+                    const updateCount = () => {
+                        count += inc;
+                        
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    updateCount();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+ 
